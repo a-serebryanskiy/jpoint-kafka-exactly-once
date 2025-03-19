@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.kafka:kafka-clients:3.4.1'
+    implementation 'org.apache.kafka:kafka-streams:3.4.1'
+    implementation "org.apache.flink:flink-streaming-java:1.20.0"
+    implementation "org.apache.flink:flink-clients:1.20.0"
+    implementation "org.apache.flink:flink-connector-kafka:3.4.0-1.20"
+    implementation "org.apache.flink:flink-connector-base:1.20.0"
+    implementation "org.apache.flink:flink-statebackend-rocksdb:1.20.0"
+
+    implementation 'org.slf4j:slf4j-reload4j:2.0.16'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
